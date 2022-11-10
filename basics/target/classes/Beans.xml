@@ -6,11 +6,11 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <!--   inner bean   -->
     <bean id = "helloWorld" class = "com.example.HelloWorld" scope = "prototype">
-       <property name="person">
-           <bean class="com.example.Person">
-               <property name="fullName" value="Allez Si Omar!!! "/>
-           </bean>
-       </property>
+        <property name="person">
+            <bean class="com.example.Person">
+                <property name="fullName" value="Allez Si Omar!!! "/>
+            </bean>
+        </property>
     </bean>
 
 </beans>
