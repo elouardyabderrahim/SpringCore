@@ -1,10 +1,12 @@
 package com.example;
 
-import org.springframework.beans.factory.DisposableBean;
-import org.springframework.beans.factory.InitializingBean;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+/*make sure to have the javax.annotation dependency*/
 
 
-public class HelloWorld implements InitializingBean, DisposableBean {
+public class HelloWorld  {
 
     private Person person;
 
@@ -24,17 +26,17 @@ public class HelloWorld implements InitializingBean, DisposableBean {
     public void getMessage(){
         System.out.println("Your Message : " + person.getFullName() );
     }
-    @Override
-    public void afterPropertiesSet() throws Exception{
+    @PostConstruct
+    public void init() throws Exception{
         System.out.println(
                 "the init() method"
-                        + " Programmatic Approach");
+                        + "  Using Annotation");
 
     }
-    @Override
+    @PreDestroy
     public void destroy() throws Exception{
         System.out.println(
-                "the destroy() method"+ " Programmatic Approach");
+                "the destroy() method"+"  Using Annotation");
 
     }
 
