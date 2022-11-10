@@ -4,9 +4,13 @@
        xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-    <!--     switch between the two to see the deference   -->
+    <!--   inner bean   -->
     <bean id = "helloWorld" class = "com.example.HelloWorld" scope = "prototype">
-<!--    <bean id = "helloWorld" class = "com.example.HelloWorld" scope = "singleton">-->
+       <property name="person">
+           <bean class="com.example.Person">
+               <property name="fullName" value="Allez Si Omar!!! "/>
+           </bean>
+       </property>
     </bean>
 
 </beans>
