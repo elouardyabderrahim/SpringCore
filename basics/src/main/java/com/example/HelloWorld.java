@@ -1,8 +1,10 @@
 package com.example;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
-public class HelloWorld {
+
+public class HelloWorld implements InitializingBean, DisposableBean {
 
     private Person person;
 
@@ -22,16 +24,17 @@ public class HelloWorld {
     public void getMessage(){
         System.out.println("Your Message : " + person.getFullName() );
     }
-
-    public void init() throws Exception{
+    @Override
+    public void afterPropertiesSet() throws Exception{
         System.out.println(
                 "the init() method"
-                        + " using Xml");
+                        + " Programmatic Approach");
 
     }
+    @Override
     public void destroy() throws Exception{
         System.out.println(
-                "the destroy() method"+ " using Xml");
+                "the destroy() method"+ " Programmatic Approach");
 
     }
 

@@ -5,9 +5,10 @@
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <!--   Bean life cycle
-        init and destroy methods using the Xml file
+        init and destroy methods By Programmatic Approach
+        go to HelloWord Class
      -->
-    <bean id = "helloWorld" class = "com.example.HelloWorld" init-method="init" destroy-method="destroy"/>
+    <bean id = "helloWorld" class = "com.example.HelloWorld" />
 
 
 
